@@ -2,7 +2,19 @@
 
 A modern and responsive Weather Website built using **HTML**, **CSS**, and **JavaScript**. It provides real-time weather information for any city using the **OpenWeatherMap API**.
 
-![Weather Website Banner](https://via.placeholder.com/1000x300?text=Weather+Website)
+---
+
+## 📷 Screenshot
+
+> Add a screenshot of your project here.
+
+```
+<img width="630" height="817" alt="ss of weather website" src="https://github.com/user-attachments/assets/4bcb2434-a86a-484f-814d-56153e6dcbaf" />
+
+```
+
+---
+
 
 ## 🚀 Live Demo
 
@@ -31,19 +43,6 @@ A modern and responsive Weather Website built using **HTML**, **CSS**, and **Jav
 - CSS3
 - JavaScript (ES6)
 - OpenWeatherMap API
-
----
-
-
----
-
-## 📷 Screenshot
-
-> Add a screenshot of your project here.
-
-```
-images/screenshot.png
-```
 
 ---
 
