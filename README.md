@@ -9,11 +9,8 @@ A modern and responsive Weather Website built using **HTML**, **CSS**, and **Jav
 > Add a screenshot of your project here.
 
 ```
-## 📷 Screenshot
+<img width="630" height="817" alt="ss of weather website" src="https://github.com/user-attachments/assets/ac54a5f4-ddfe-485f-b363-ffb5878138c2" />
 
-![Weather Website Screenshot](https://github.com/user-attachments/assets/4bcb2434-a86a-484f-814d-56153e6dcbaf)
-
-```
 
 ---
 
