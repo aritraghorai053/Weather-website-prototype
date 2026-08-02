@@ -6,7 +6,7 @@ A modern and responsive Weather Website built using **HTML**, **CSS**, and **Jav
 
 ## 🚀 Live Demo
 
-🔗 **Website:** https://your-live-demo-link.vercel.app/
+🔗 **Website:**  https://aritraghorai053.github.io/weather-website-prototype/
 
 > Replace the above link with your deployed website URL (GitHub Pages, Netlify, or Vercel).
 
@@ -34,26 +34,6 @@ A modern and responsive Weather Website built using **HTML**, **CSS**, and **Jav
 
 ---
 
-## 📂 Project Structure
-
-```
-Weather-Website/
-│
-├── index.html
-├── style.css
-├── script.js
-├── images/
-│   ├── clear.png
-│   ├── clouds.png
-│   ├── rain.png
-│   ├── drizzle.png
-│   ├── mist.png
-│   ├── humidity.png
-│   ├── wind.png
-│   └── search.png
-│
-└── README.md
-```
 
 ---
 
@@ -64,24 +44,6 @@ Weather-Website/
 ```
 images/screenshot.png
 ```
-
----
-
-## ⚙️ Installation
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/Weather-website-prototype.git
-```
-
-2. Open the project folder
-
-```bash
-cd Weather-website-prototype
-```
-
-3. Open `index.html` in your browser.
 
 ---
 
@@ -131,32 +93,7 @@ This website works perfectly on:
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-
-```bash
-git checkout -b feature-name
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Added new feature"
-```
-
-4. Push to the branch
-
-```bash
-git push origin feature-name
-```
-
-5. Open a Pull Request
-
----
 
 ## 👨‍💻 Author
 
