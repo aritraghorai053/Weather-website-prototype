@@ -6,8 +6,8 @@ A modern and responsive Weather Website built using **HTML**, **CSS**, and **Jav
 
 ## 📷 Screenshot
 
-![Weather Website](<img width="630" height="817" alt="ss of weather website" src="https://github.com/user-attachments/assets/2512fc0c-94e9-4a21-9434-33ee6833de61" />
-)
+<img width="630" height="817" alt="ss of weather website" src="https://github.com/user-attachments/assets/b883b5f8-d8d3-45ed-bbad-59b98d3d0160" />
+
 
 
 
