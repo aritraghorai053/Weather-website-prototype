@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Website</title>
+  <link rel="icon" href="Icons/Website icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="search">
+      <input type="text" class="search-input" placeholder="Enter city name..." spellcheck="false" aria-label="City Search">
+      <button aria-label="Search City">
+        <img src="Icons/Search'.png" alt="Search Icon">
+      </button>
+    </div>
+
+    <div class="error">
+      <p>⚠️ Invalid city name! Please try again.</p>
+    </div>
+
+    <div class="weather">
+      <img src="Icons/Cloudy.png" class="weather-icon" alt="Weather condition icon">
+      <h1 class="temp">22°C</h1>
+      <h2 class="city">New York</h2>
+      <p class="weather-desc">Cloudy</p>
+
+      <div class="details">
+        <div class="col">
+          <img src="Icons/humidity.png" alt="Humidity Icon">
+          <div>
+            <p class="humidity">50%</p>
+            <p class="col-label">Humidity</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img src="Icons/wind.png" alt="Wind Speed Icon">
+          <div>
+            <p class="wind">15 km/h</p>
+            <p class="col-label">Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // OpenWeatherMap API Configuration
+    const apiKey = "610c6b1ffa44176ac49d1a0facf31d32";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    // DOM Element References
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search button");
+    const weatherIcon = document.querySelector(".weather-icon");
+    const weatherDesc = document.querySelector(".weather-desc");
+    const errorBox = document.querySelector(".error");
+    const weatherBox = document.querySelector(".weather");
+
+    // Fetch and display weather data for a city
+    async function checkweather(city) {
+      if (!city || city.trim() === "") return;
+
+      try {
+        const response = await fetch(apiUrl + encodeURIComponent(city) + `&appid=${apiKey}`);
+
+        // Handle city not found (404 error)
+        if (response.status === 404) {
+          errorBox.style.display = "block";
+          weatherBox.style.display = "none";
+        } else {
+          const data = await response.json();
+
+          // Update text content with API data
+          document.querySelector(".city").innerHTML = data.name;
+          document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+          document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+          document.querySelector(".wind").innerHTML = Math.round(data.wind.speed * 3.6) + " km/h";
+          
+          if (data.weather && data.weather[0]) {
+            weatherDesc.innerHTML = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+
+            // Update weather icon based on main condition
+            const condition = data.weather[0].main;
+            if (condition === "Clouds") {
+              weatherIcon.src = "Icons/Cloudy.png";
+            } else if (condition === "Drizzle") {
+              weatherIcon.src = "Icons/Drizzel.png";
+            } else if (condition === "Mist" || condition === "Haze" || condition === "Fog") {
+              weatherIcon.src = "Icons/mist.png";
+            } else if (condition === "Rain") {
+              weatherIcon.src = "Icons/Drizzel.png";
+            } else if (condition === "Thunderstorm") {
+              weatherIcon.src = "Icons/ThunderStorm.png";
+            } else if (condition === "Snow") {
+              weatherIcon.src = "Icons/snow.png";
+            } else if (condition === "Clear") {
+              weatherIcon.src = "Icons/Sun.png";
+            } else {
+              weatherIcon.src = "Icons/Cloudy.png";
+            }
+          }
+
+          // Show weather box and hide error message
+          weatherBox.style.display = "block";
+          errorBox.style.display = "none";
+        }
+      } catch (error) {
+        errorBox.style.display = "block";
+        weatherBox.style.display = "none";
+      }
+    }
+
+    // Event Listener: Click Search Button
+    searchBtn.addEventListener("click", () => {
+      checkweather(searchBox.value);
+    });
+
+    // Event Listener: Press 'Enter' Key in Search Box
+    searchBox.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        checkweather(searchBox.value);
+      }
+    });
+
+    // Initial Weather Check on Load
+    checkweather("New York");
+  </script>
+
+</body>
+
+</html>
